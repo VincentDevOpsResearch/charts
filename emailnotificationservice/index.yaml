@@ -3,12 +3,12 @@ entries:
   emailnotification:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-20T14:46:05.098422957Z"
+    created: "2025-03-20T14:49:31.033354066Z"
     description: A Helm chart for deploying the email notification service
-    digest: f192bfc40d0723af4c6573b32bbaf9dc387dd56f8cfe0df1a58ee56d1bacf6c8
+    digest: db0bba5b1f9f9da2766f0db62ad021cf48895befc40e26cc70f662fdd96c8075
     name: emailnotification
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/emailnotificationservice/emailnotification-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.097868153Z"
+generated: "2025-03-20T14:49:31.032928271Z"

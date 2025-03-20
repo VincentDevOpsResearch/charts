@@ -3,12 +3,12 @@ entries:
   itppbackend:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-20T14:46:05.284481325Z"
+    created: "2025-03-20T14:49:31.188544286Z"
     description: A Helm chart for deploying ITPP Backend
-    digest: ea485253cd5c51b0a15438037d59df824ca62660092f6229b374772d081eb517
+    digest: e03e250c3a97269f3382c3abc71afae884156dea1b573926ff1633b1fbe72a8d
     name: itppbackend
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/itppbackend/itppbackend-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.284096368Z"
+generated: "2025-03-20T14:49:31.188072605Z"

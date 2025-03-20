@@ -3,12 +3,12 @@ entries:
   sql-server:
   - apiVersion: v2
     appVersion: "2022"
-    created: "2025-03-20T14:46:05.883758125Z"
+    created: "2025-03-20T14:49:31.653476319Z"
     description: A Helm chart for deploying MSSQL server
-    digest: 6f9c26190c1a24334f54163050c92d1dc4d9650319f02bf66bb38f9c49329c13
+    digest: c07891658041a1c042dd954882331dda6502583d5854b9de81d09b92ee282acf
     name: sql-server
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/sql-server/sql-server-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.883374061Z"
+generated: "2025-03-20T14:49:31.653053369Z"

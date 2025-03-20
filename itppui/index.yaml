@@ -3,6 +3,16 @@ entries:
   itppui:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-03-20T14:49:31.258800574Z"
+    description: A Helm chart for deploying ITPP UI
+    digest: 76e0c15966a9aac469c7effc9c3d80e86290b318dc689f8471bff1a7b19daf61
+    name: itppui
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/itppui/itppui-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-03-20T14:46:05.397822331Z"
     description: A Helm chart for deploying ITPP UI
     digest: d24ed4754fa503716a7824b04272af7ada22536d8ff9e07c8e80e26f93b19bc3
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://vincentdevopsresearch.github.io/charts/itppui/itppui-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.39719881Z"
+generated: "2025-03-20T14:49:31.258444259Z"

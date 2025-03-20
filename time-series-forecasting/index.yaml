@@ -3,12 +3,12 @@ entries:
   time-series-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-20T14:46:05.972827406Z"
+    created: "2025-03-20T14:49:31.733554943Z"
     description: A Helm chart for deploying the time-series prediction service
-    digest: 60f2ba0b6f938f011cd51954c6e7fadcd4875eae37d03fb3acc385d90cf82894
+    digest: 1188d5a605afc1409a46a9b3525c47847a5981a56db5ad06bb54dd1c1027d6c6
     name: time-series-service
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/time-series-forecasting/time-series-service-1.0.0.tgz
     version: 1.0.0
-generated: "2025-03-20T14:46:05.972516357Z"
+generated: "2025-03-20T14:49:31.733174293Z"

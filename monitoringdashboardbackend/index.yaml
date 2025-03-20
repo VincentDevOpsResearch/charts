@@ -3,12 +3,12 @@ entries:
   monitoring-dashboard-backend:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-20T14:46:05.505026933Z"
+    created: "2025-03-20T14:49:31.33652061Z"
     description: Helm chart for deploying Monitoring Dashboard Backend
-    digest: 309a8dcc389449395a167eaee563caeecce1f421987b5d9500a4d2e331e18a7f
+    digest: 69b7e9da1c7c5a09b690ebded14b3bc0e82db37f7ad5bc70428c357ed5e627c7
     name: monitoring-dashboard-backend
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/monitoringdashboardbackend/monitoring-dashboard-backend-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.504615698Z"
+generated: "2025-03-20T14:49:31.336057456Z"

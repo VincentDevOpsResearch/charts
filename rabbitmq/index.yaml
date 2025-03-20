@@ -3,12 +3,12 @@ entries:
   rabbitmq:
   - apiVersion: v2
     appVersion: "3.12"
-    created: "2025-03-20T14:46:05.789737669Z"
+    created: "2025-03-20T14:49:31.575614534Z"
     description: A Helm chart for RabbitMQ
-    digest: f4c69362f0b9679828f7a23edab4621507f1cec51df103a8015f1fba065ab950
+    digest: b8e29230646ad9342e5f3f9e8d052a21bf4ea8dcc140b27a8ea8934b9e0c9c6e
     name: rabbitmq
     type: application
     urls:
     - https://vincentdevopsresearch.github.io/charts/rabbitmq/rabbitmq-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:05.789355458Z"
+generated: "2025-03-20T14:49:31.575195732Z"

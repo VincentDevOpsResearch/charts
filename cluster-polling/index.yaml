@@ -3,11 +3,11 @@ entries:
   clusterpolling:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-20T14:46:04.897454027Z"
+    created: "2025-03-20T14:49:30.869165175Z"
     description: A Helm chart for deploying clusterpolling as CronJob
-    digest: 824f1132656c9d71a5d6ddf057bc1a235a08b08572d73f37b16ae5f14bbbb547
+    digest: ce488f30f7eff1a7a863cecb223c447af51d2eaf8b7e994fffb82237b8b3a344
     name: clusterpolling
     urls:
     - https://vincentdevopsresearch.github.io/charts/cluster-polling/clusterpolling-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-20T14:46:04.897119885Z"
+generated: "2025-03-20T14:49:30.868799692Z"
