@@ -1,0 +1,15 @@
+image:
+  repository: vincentjin98/app
+  tag: latest                  
+  pullPolicy: IfNotPresent        
+
+replicaCount: 1
+
+service:
+  type: ClusterIP                
+  port: 8000                      
+  targetPort: 8000                
+
+imagePullSecrets:
+  - name: ghcr-secret
+

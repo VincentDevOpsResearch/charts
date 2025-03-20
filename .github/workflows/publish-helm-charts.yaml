@@ -1,0 +1,91 @@
+name: Publish Helm Charts
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) Checkout "main" branch code
+      - name: Checkout main
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+
+      # 2) Install Helm
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: latest
+
+      # 3) Package all charts into helm-repo/<chart_name>/
+      #    Adjust the loop if charts are stored under "charts/*/Chart.yaml"
+      - name: Package Charts
+        run: |
+          mkdir -p helm-repo
+          for chart in */Chart.yaml; do
+            chart_dir=$(dirname "$chart")
+            mkdir -p "helm-repo/$chart_dir"
+            echo "Packaging chart: $chart_dir"
+            helm package "$chart_dir" --destination "helm-repo/$chart_dir"
+          done
+
+      # 4) Fetch latest `index.yaml` for each chart from GH Pages and update
+      - name: Update Per-Chart Index.yaml
+        env:
+          CHARTS_URL: ${{ secrets.HELM_REPO_URL }}  # e.g., https://<user>.github.io/<repo>
+        run: |
+          for chart_dir in helm-repo/*; do
+            chart_name=$(basename "$chart_dir")
+            cd "$chart_dir"
+
+            echo "Fetching existing index.yaml for $chart_name..."
+            curl -f -L -o index.yaml "$CHARTS_URL/$chart_name/index.yaml" || rm -f index.yaml
+
+            if [ -f index.yaml ]; then
+              echo "Merging new packages with existing index.yaml for $chart_name..."
+              helm repo index . --url "$CHARTS_URL/$chart_name" --merge index.yaml
+            else
+              echo "Creating a new index.yaml for $chart_name (no merge)."
+              helm repo index . --url "$CHARTS_URL/$chart_name"
+            fi
+
+            cd ../../
+          done
+
+      # 5) Fetch latest top-level `index.yaml` and update it
+      - name: Update Top-Level Repository Index.yaml
+        env:
+          CHARTS_URL: ${{ secrets.HELM_REPO_URL }}
+        run: |
+          cd helm-repo
+          echo "Fetching top-level index.yaml..."
+          curl -f -L -o index.yaml "$CHARTS_URL/index.yaml" || rm -f index.yaml
+
+          if [ -f index.yaml ]; then
+            echo "Merging top-level index.yaml with new charts..."
+            helm repo index . --url "$CHARTS_URL" --merge index.yaml
+          else
+            echo "Creating new top-level index.yaml..."
+            helm repo index . --url "$CHARTS_URL"
+          fi
+
+      # 6) Debug final directory & index.yaml
+      - name: Debugging Output
+        run: |
+          echo "=== helm-repo structure ==="
+          ls -R helm-repo
+          echo "=== Top-Level index.yaml ==="
+          cat helm-repo/index.yaml || echo "No index.yaml created"
+
+      # 7) Deploy helm-repo/ to gh-pages
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GHCR_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: helm-repo
+          keep_files: true

@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-rabbitmq
+  labels:
+    app: rabbitmq
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+      - name: rabbitmq
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 5672   # RabbitMQ AMQP port
+        - containerPort: 15672  # Management UI port
+        - containerPort: 15792 # Prometheus metrics port
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: {{ .Values.env.RABBITMQ_DEFAULT_USER }}
+        - name: RABBITMQ_DEFAULT_PASS
+          value: {{ .Values.env.RABBITMQ_DEFAULT_PASS }}
+        - name: RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS
+          value: "--rabbitmq-prometheus.port=15692" # Prometheus metrics
+        - name: RABBITMQ_ENABLED_PLUGINS_FILE
+          value: "/etc/rabbitmq/enabled_plugins"
+        {{- if .Values.persistence.enabled }}
+        volumeMounts:
+        - name: rabbitmq-storage
+          mountPath: /mnt/data/rabbitmq
+        {{- end }}
+      volumes:
+      {{- if .Values.persistence.enabled }}
+      - name: rabbitmq-storage
+        persistentVolumeClaim:
+          claimName: {{ .Release.Name }}-pvc
+      {{- else }}
+      - name: rabbitmq-storage
+        emptyDir: {}
+      {{- end }}

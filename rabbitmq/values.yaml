@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: rabbitmq
+  tag: 3-management
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  management:
+    port: 15672
+  amqp:
+    port: 5672
+  prometheus:
+    port: 15692
+
+resources: {}
+
+persistence:
+  enabled: true
+  size: 1Gi
+  storageClass: manual
+  reclaimPolicy: Retain
+  path: "/mnt/data/rabbitmq"
+
+env:
+  RABBITMQ_DEFAULT_USER: skyworld
+  RABBITMQ_DEFAULT_PASS: skyworld

@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/vincentdevopsresearch/skyworlditpp/emailnotificationservice
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+
+secrets:
+  awsSecret: "aws-secret"
+  dbSecret: "db-secret"
+  emailSecret: "email-secret"
+  rabbitmqSecret: "rabbitmq-secret"
+
+imagePullSecrets:
+  - name: ghcr-secret

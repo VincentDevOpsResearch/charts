@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources:
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.awsSecret }}
+              key: AWS_ACCESS_KEY_ID
+
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.awsSecret }}
+              key: AWS_SECRET_ACCESS_KEY
+
+        - name: AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.awsSecret }}
+              key: AWS_REGION
+
+        - name: DB_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.dbSecret }}
+              key: DB_CONNECTION_STRING
+
+        # 🔹 RabbitMQ Secret
+        - name: RABBITMQ_HOST
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.rabbitmqSecret }}
+              key: RABBITMQ_HOST
+
+        - name: RABBITMQ_PORT
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.rabbitmqSecret }}
+              key: RABBITMQ_PORT
+
+        - name: RABBITMQ_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.rabbitmqSecret }}
+              key: RABBITMQ_USER
+
+        - name: RABBITMQ_PASS
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.rabbitmqSecret }}
+              key: RABBITMQ_PASS
+
+        - name: FromEmail
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.emailSecret }}
+              key: FromEmail
+  
+      imagePullSecrets:
+      {{- if .Values.imagePullSecrets }}
+      {{- toYaml .Values.imagePullSecrets | nindent 6 }}
+      {{- end }}

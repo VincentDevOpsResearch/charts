@@ -1,0 +1,16 @@
+{{- if .Values.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-pv
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.size }}
+  accessModes: {{ .Values.persistence.accessModes | toJson }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ .Values.persistence.storageClass }}
+  hostPath:
+    path: /mnt/data/{{ .Release.Name }}
+{{end}}

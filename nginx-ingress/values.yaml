@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: nginx/nginx-ingress
+  tag: 3.7.2
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  name: nginx-ingress-serviceaccount
+
+nodeSelector:
+  nginx-ingress: "true"
+
+resources: {}
+
+ingressClassName: nginx
+
+service:
+  enabled: false
+
+ingressRules:
+  - host: api.vincentjin98.com
+    serviceName: itppbackend-service
+    servicePort: 5036
+  - host: itpp.vincentjin98.com
+    serviceName: itppui-service
+    servicePort: 80
+  - host: rabbitmq.vincentjin98.com
+    serviceName: rabbitmq
+    servicePort: 15672
+  - host: monitoring.vincentjin98.com
+    serviceName: monitoring-service
+    servicePort: 5292
+  - host: dashboard.vincentjin98.com
+    serviceName: dashboard-service
+    servicePort: 80
+
+nginx:
+  ports:
+    http: 80
+    https: 443
+    prometheus: 9113

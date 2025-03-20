@@ -1,0 +1,17 @@
+{{- if .Values.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-pv
+  labels:
+    app: rabbitmq
+spec:
+  capacity:
+    storage: {{ .Values.persistence.size }}
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: {{ .Values.persistence.reclaimPolicy }}
+  storageClassName: {{ .Values.persistence.storageClass }}
+  hostPath:
+    path: {{ .Values.persistence.path }}
+{{- end }}

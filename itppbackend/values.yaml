@@ -1,0 +1,33 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/vincentdevopsresearch/skyworlditpp/itppbackend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  ports:
+    - name: http-port-7179
+      protocol: TCP
+      port: 7179
+      targetPort: 7179
+    - name: http-port-5036
+      protocol: TCP
+      port: 5036
+      targetPort: 5036
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "250m"
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+
+env:
+  ASPNETCORE_ENVIRONMENT: "Development"
+  ASPNETCORE_URLS: "http://*:7179;http://*:5036"
+
+imagePullSecrets:
+  - name: ghcr-secret

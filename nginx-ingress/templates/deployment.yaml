@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ingress-controller
+  namespace: default
+  labels:
+    app: nginx-ingress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ingress
+  template:
+    metadata:
+      labels:
+        app: nginx-ingress
+    spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      serviceAccountName: nginx-ingress-serviceaccount
+      nodeSelector:
+        nginx-ingress: "true"
+      containers:
+      - name: nginx-ingress-controller
+        image: nginx/nginx-ingress:3.7.2
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: {{ .Values.nginx.ports.http }}
+            name: http
+          - containerPort: {{ .Values.nginx.ports.https }}
+            name: https
+
+        securityContext:
+          runAsUser: 0
