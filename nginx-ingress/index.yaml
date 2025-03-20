@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  nginx-ingress:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:05.701718906Z"
+    description: A Helm chart for deploying NGINX Ingress Controller
+    digest: 82542368f60d438a9fcbb2338f3148d4367f39630c9a7df6364a00e09c034f73
+    name: nginx-ingress
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/nginx-ingress/nginx-ingress-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-20T14:46:05.70122696Z"

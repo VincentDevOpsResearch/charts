@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  forecastingservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:05.189077241Z"
+    description: A Helm chart for deploying forecasting as CronJob
+    digest: 0b4420a74cf4da476ef521735a13a8c6023aef02a5ca3cdf4cb53b75eab11d04
+    name: forecastingservice
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/forecasting-service/forecastingservice-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-20T14:46:05.188392889Z"

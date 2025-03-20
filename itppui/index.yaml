@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  itppui:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:05.397822331Z"
+    description: A Helm chart for deploying ITPP UI
+    digest: d24ed4754fa503716a7824b04272af7ada22536d8ff9e07c8e80e26f93b19bc3
+    name: itppui
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/itppui/itppui-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-20T14:46:05.39719881Z"

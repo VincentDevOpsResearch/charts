@@ -1,0 +1,133 @@
+apiVersion: v1
+entries:
+  clusterpolling:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.077068103Z"
+    description: A Helm chart for deploying clusterpolling as CronJob
+    digest: 824f1132656c9d71a5d6ddf057bc1a235a08b08572d73f37b16ae5f14bbbb547
+    name: clusterpolling
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/cluster-polling/clusterpolling-0.1.0.tgz
+    version: 0.1.0
+  custom-prometheus:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-20T14:46:06.07731373Z"
+    description: A Helm chart for Kubernetes
+    digest: bef0580022432b676d8cf72eda07c6d112ffadd8d230ffb7bfd02f9f839ebaca
+    name: custom-prometheus
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/custom-prometheus/custom-prometheus-0.1.0.tgz
+    version: 0.1.0
+  emailnotification:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.077529372Z"
+    description: A Helm chart for deploying the email notification service
+    digest: f192bfc40d0723af4c6573b32bbaf9dc387dd56f8cfe0df1a58ee56d1bacf6c8
+    name: emailnotification
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/emailnotificationservice/emailnotification-0.1.0.tgz
+    version: 0.1.0
+  forecastingservice:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.077690061Z"
+    description: A Helm chart for deploying forecasting as CronJob
+    digest: 0b4420a74cf4da476ef521735a13a8c6023aef02a5ca3cdf4cb53b75eab11d04
+    name: forecastingservice
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/forecasting-service/forecastingservice-0.1.0.tgz
+    version: 0.1.0
+  itppbackend:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.077904811Z"
+    description: A Helm chart for deploying ITPP Backend
+    digest: ea485253cd5c51b0a15438037d59df824ca62660092f6229b374772d081eb517
+    name: itppbackend
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/itppbackend/itppbackend-0.1.0.tgz
+    version: 0.1.0
+  itppui:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.07808678Z"
+    description: A Helm chart for deploying ITPP UI
+    digest: d24ed4754fa503716a7824b04272af7ada22536d8ff9e07c8e80e26f93b19bc3
+    name: itppui
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/itppui/itppui-0.1.0.tgz
+    version: 0.1.0
+  monitoring-dashboard-backend:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.078325775Z"
+    description: Helm chart for deploying Monitoring Dashboard Backend
+    digest: 309a8dcc389449395a167eaee563caeecce1f421987b5d9500a4d2e331e18a7f
+    name: monitoring-dashboard-backend
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/monitoringdashboardbackend/monitoring-dashboard-backend-0.1.0.tgz
+    version: 0.1.0
+  monitoringdashboardui:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-20T14:46:06.078511521Z"
+    description: A Helm chart for Kubernetes
+    digest: d2bdc85423a15458ef9ec916e78960d407abe659419e470940db047f2164462b
+    name: monitoringdashboardui
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/monitoringdashboardui/monitoringdashboardui-0.1.0.tgz
+    version: 0.1.0
+  nginx-ingress:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.078787003Z"
+    description: A Helm chart for deploying NGINX Ingress Controller
+    digest: 82542368f60d438a9fcbb2338f3148d4367f39630c9a7df6364a00e09c034f73
+    name: nginx-ingress
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/nginx-ingress/nginx-ingress-0.1.0.tgz
+    version: 0.1.0
+  rabbitmq:
+  - apiVersion: v2
+    appVersion: "3.12"
+    created: "2025-03-20T14:46:06.078994049Z"
+    description: A Helm chart for RabbitMQ
+    digest: f4c69362f0b9679828f7a23edab4621507f1cec51df103a8015f1fba065ab950
+    name: rabbitmq
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/rabbitmq/rabbitmq-0.1.0.tgz
+    version: 0.1.0
+  sql-server:
+  - apiVersion: v2
+    appVersion: "2022"
+    created: "2025-03-20T14:46:06.079194632Z"
+    description: A Helm chart for deploying MSSQL server
+    digest: 6f9c26190c1a24334f54163050c92d1dc4d9650319f02bf66bb38f9c49329c13
+    name: sql-server
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/sql-server/sql-server-0.1.0.tgz
+    version: 0.1.0
+  time-series-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-20T14:46:06.079348208Z"
+    description: A Helm chart for deploying the time-series prediction service
+    digest: 60f2ba0b6f938f011cd51954c6e7fadcd4875eae37d03fb3acc385d90cf82894
+    name: time-series-service
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/time-series-forecasting/time-series-service-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-03-20T14:46:06.076737297Z"

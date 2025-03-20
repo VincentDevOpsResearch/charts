@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  custom-prometheus:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-20T14:46:04.991891769Z"
+    description: A Helm chart for Kubernetes
+    digest: bef0580022432b676d8cf72eda07c6d112ffadd8d230ffb7bfd02f9f839ebaca
+    name: custom-prometheus
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/custom-prometheus/custom-prometheus-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-20T14:46:04.991518795Z"

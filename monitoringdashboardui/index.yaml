@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  monitoringdashboardui:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-20T14:46:05.592375637Z"
+    description: A Helm chart for Kubernetes
+    digest: d2bdc85423a15458ef9ec916e78960d407abe659419e470940db047f2164462b
+    name: monitoringdashboardui
+    type: application
+    urls:
+    - https://vincentdevopsresearch.github.io/charts/monitoringdashboardui/monitoringdashboardui-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-20T14:46:05.592048779Z"
